@@ -3,6 +3,23 @@
   background-color: #131921;
 }
 
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.header-cart {
+  position: absolute;
+  right: -6rem;
+  top: 1.7rem;
+}
+
+.header-btn {
+  position: absolute;
+  top: 0.2rem;
+}
+
 .site-page-subheader-ghost-wrapper {
   background-color: #232f3e;
   color: white;
@@ -23,6 +40,8 @@
 .logo {
   height: 40px;
   margin-right: 20px;
+  position: absolute;
+  left: -9rem;
 }
 
 .flag {

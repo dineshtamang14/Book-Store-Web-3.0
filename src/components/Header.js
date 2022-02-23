@@ -2,8 +2,8 @@ import { PageHeader, Button, Input, Space, Badge } from 'antd';
 import { useMoralis } from "react-moralis";
 import { Link } from 'react-router-dom';
 import './Header.css'
-import Amazon from "../images/logo.png";
-import USA from "../images/usa.png";
+// import Amazon from "../images/logo.png";
+// import USA from "../images/usa.png";
 import BookStore from "../images/bookstore.png";
 import {ShoppingCartOutlined, MenuOutlined} from "@ant-design/icons";
 
@@ -14,11 +14,12 @@ const Header = () => {
   const { authenticate, account } = useMoralis();
   return(
     <div className="site-page-header-ghost-wrapper">
+      <div className="header">
       <PageHeader
         ghost={false}
         extra={[
           <>
-          <img src={BookStore} className="logo"></img>
+          <Link to="/"><img src={BookStore} className="logo"></img></Link>
           {/* <img src={BookStore} className="logo"></img> */}
           <Search
               placeholder="Find A Product"
@@ -26,13 +27,14 @@ const Header = () => {
               className = "searchBar"
             />
          <Button 
-         className="login"
+         className="login header-btn"
          key="1" 
          type="primary" 
          onClick={() => authenticate()}>
           {account ? <span>{account.slice(0,5)}...</span> : <span>login</span>}
           </Button>
-          <div>
+          <div className="header-cart">
+          <Space size={"large"}>
               
               <Badge count={0} showZero>
                 <span className="header-buttons">
@@ -44,10 +46,13 @@ const Header = () => {
                 <img src={USA} alt="region" className="flag"></img>▾
               </Space> */}
               
-            </div>
+            </Space>
+          </div>
           </>
         ]}>
       </PageHeader>
+      </div>
+      
       <div className="site-page-subheader-ghost-wrapper">
       <Space size={"middle"}>
         <Space size={"small"} style={{fontWeight:"bold"}}>
