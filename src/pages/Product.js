@@ -4,6 +4,8 @@ import "./Product.css";
 import Header from '../components/Header';
 import { useLocation } from 'react-router';
 import Purchase from '../components/Purchase';
+
+
 const Product = () => {
   
   let {state: book} = useLocation();

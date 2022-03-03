@@ -25,9 +25,10 @@ function Purchase({book}) {
     const options1 = {
       type: "native", 
       amount: Moralis.Units.ETH(priceMatic), 
-      receiver: "xxxxx"
+      receiver: "0xEE5EfA8E15902e74Bdca5D70cc37bED744a02Cb9"
     }
-    let result = await Moralis.transfer(options1)
+    // let result = await Moralis.transfer(options1)
+    await Moralis.transfer(options1);
 
 
     //Save Transaction Details to DB
